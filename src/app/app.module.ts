@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 
 import { EventsAppComponent } from './events-app.component';
+import { EventsListComponent } from './events/event-list/events-list.component';
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import { EventsAppComponent } from './events-app.component';
     BrowserModule
   ],
   declarations: [
-    EventsAppComponent
+    EventsAppComponent,
+    EventsListComponent
   ],
   bootstrap: [EventsAppComponent]
 })
