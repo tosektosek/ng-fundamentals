@@ -2,6 +2,7 @@ import { ToastrService } from './../../common/toastr.service';
 import { Component, OnInit } from '@angular/core';
 import { EventService } from '../shared/event.service';
 import {ActivatedRoute} from '@angular/router';
+import { IEvent } from '..';
 
 declare let toastr;
 
@@ -12,11 +13,17 @@ declare let toastr;
 })
 export class EventsListComponent implements OnInit {
 
-  events: any[];
+  events: IEvent[];
   constructor(private eventService: EventService, private toastrService: ToastrService,
               private route: ActivatedRoute) {
    }
+
+   letters: any[] = [1, 2];
   ngOnInit() {
+    while(this.letters.length) {
+      this.letters.pop();
+    }
+    console.log(this.letters);
     this.events = this.route.snapshot.data['events'];
   }
 
